@@ -1,6 +1,6 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { IUser } from 'src/common/interface/user.interface';
-import { UserDTO } from './user.dto';
+import { UserDTO } from './dto/user.dto';
 import * as bcrypt from 'bcrypt'
 import { USER } from 'src/common/models/models';
 import { Model } from 'mongoose';
@@ -10,6 +10,14 @@ import { InjectModel } from '@nestjs/mongoose';
 export class UserService {
 
     constructor( @InjectModel(USER.name) private readonly model:Model<IUser> ){}
+
+    async checkPassword( password: string, passwordDB: string ): Promise<boolean> {
+        return await bcrypt.compare(password, passwordDB);
+    }
+
+    async findByUsername( username: string ) {
+        return this.model.findOne({ username });
+    }
 
     async findAll(): Promise<IUser[]>{
         return await this.model.find();
