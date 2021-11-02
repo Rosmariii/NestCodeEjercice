@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "6c2ab9cd-0763-4b17-93de-16fdf16e5a5a",
+		"name": "flight",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pilot\": \"Kenji\",\r\n    \"airplane\": \"asr785\",\r\n    \"destinantionCity\": \"Chaco\",\r\n    \"flightDate\":  \"2022-01-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/v1/flight",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"flight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pilot\": \"Rosmari\",\r\n    \"airplane\": \"asd123\",\r\n    \"destinantionCity\": \"Nuevas Zelanda\",\r\n    \"flightDate\":  \"2022-01-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/v1/flight/",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"flight",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findOne",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pilot\": \"Rosmari\",\r\n    \"airplane\": \"asd123\",\r\n    \"destinantionCity\": \"Nuevas Zelanda\",\r\n    \"flightDate\":  \"2022-01-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/v1/flight/617221a955cdd2a4bd6b8000",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"flight",
+						"617221a955cdd2a4bd6b8000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pilot\": \"Rosmari Fernandez\",\r\n    \"airplane\": \"asd123\",\r\n    \"destinantionCity\": \"Nuevas Zelanda\",\r\n    \"flightDate\":  \"2022-01-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/v1/flight/6172227155cdd2a4bd6b8002",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"flight",
+						"6172227155cdd2a4bd6b8002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pilot\": \"Rosmari\",\r\n    \"airplane\": \"asd123\",\r\n    \"destinantionCity\": \"Nuevas Zelanda\",\r\n    \"flightDate\":  \"2022-01-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/v1/flight/6176bbb4c2efa1d9dae5227b",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"flight",
+						"6176bbb4c2efa1d9dae5227b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add passenger",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pilot\": \"Rosmari\",\r\n    \"airplane\": \"asd123\",\r\n    \"destinantionCity\": \"Nuevas Zelanda\",\r\n    \"flightDate\":  \"2022-01-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/v1/flight/617221a955cdd2a4bd6b8000/passenger/61770aec0709a9ecf4c269e7",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"flight",
+						"617221a955cdd2a4bd6b8000",
+						"passenger",
+						"61770aec0709a9ecf4c269e7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
